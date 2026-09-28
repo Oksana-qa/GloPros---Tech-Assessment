@@ -77,6 +77,17 @@ The HTML report is uploaded as a workflow artifact. On failure, screenshots, vid
 
 AI was used to help structure the project, draft the BDD documentation, and review/refine test code. The final locator and assertion decisions were validated against the live review application and by five successful repeat runs. Initial assumptions that UI accessibility IDs were Playwright test IDs and that the search button was a submit button were rejected after live verification; the implementation uses the actual accessible labels and DOM relationships instead.
 
+## AI-oriented workflow
+
+The repository includes lightweight context for future AI-assisted work:
+
+- [AGENTS.md](AGENTS.md) - project rules and continuation entry points for coding agents.
+- [.ai/knowledge/ai-workflow.md](.ai/knowledge/ai-workflow.md) - verified application facts, decisions, and a continuation checklist.
+- [.github/copilot-instructions.md](.github/copilot-instructions.md) - concise GitHub Copilot conventions.
+- [.github/skills/vacancy-search-testing.md](.github/skills/vacancy-search-testing.md) - a focused workflow for vacancy-search changes.
+
+These files are intentionally short: they preserve useful context while keeping the project easy to maintain.
+
 ## Definition of done
 
 The assignment is complete when the repository contains:
