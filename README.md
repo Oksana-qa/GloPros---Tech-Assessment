@@ -24,8 +24,11 @@ The assignment is complete when the repository contains:
 
 ## Open points to verify in the application
 
-- The exact job-title query-parameter name.
 - Stable UI selectors for the search controls, match count, and vacancy-card metadata.
+
+## Verified search contract
+
+The review application stores the main job title in the `main_job_title[0]` query parameter. The automated test will verify this parameter with `URLSearchParams`, alongside `type=vacancies`, rather than comparing the complete URL string.
 
 ## Status
 
