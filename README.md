@@ -1,5 +1,7 @@
 # GloPros QA Automation Assessment
 
+[![Playwright tests](https://github.com/Oksana-qa/GloPros---Tech-Assessment/actions/workflows/playwright.yml/badge.svg)](https://github.com/Oksana-qa/GloPros---Tech-Assessment/actions/workflows/playwright.yml)
+
 End-to-end test automation for the vacancy search journey in the GloPros review environment.
 
 ## Planned stack
@@ -61,7 +63,15 @@ Every test run creates an HTML report in `playwright-report/`. On failure, Playw
 
 ## Continuous integration
 
-The GitHub Actions workflow will run the same clean-install and Playwright test commands on a fresh runner. It will be added in the next CI implementation step.
+GitHub Actions runs the [Playwright tests workflow](.github/workflows/playwright.yml) on every push to `main`, pull request to `main`, and manual dispatch.
+
+Each run uses a clean Ubuntu runner and performs:
+
+1. `npm ci`
+2. `npx playwright install --with-deps chromium`
+3. `npm test`
+
+The HTML report is uploaded as a workflow artifact. On failure, screenshots, video, and trace files are uploaded as a separate diagnostics artifact. The status badge at the top of this README links to the workflow runs in GitHub Actions.
 
 ## AI usage
 
@@ -84,4 +94,4 @@ The review application stores the main job title in the `main_job_title[0]` quer
 
 ## Status
 
-The automated happy path, BDD documentation, and local reporting are implemented. GitHub Actions is pending.
+The automated happy path, BDD documentation, local reporting, and GitHub Actions are implemented.
